@@ -13,7 +13,11 @@ function validerFormulaire() {
         alert("Adresse email invalide.");
         return false;
     }
-
+<script>
+  document.getElementById("mailButton").addEventListener("click", function() {
+    window.location.href = "mailto:lilie18441806@gmail.com";
+  });
+</script>
     alert("Formulaire envoyé avec succès !");
     return true;
 }
