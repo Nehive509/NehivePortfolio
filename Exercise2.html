@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets en JavaScript</title>
+    <!-- La feuille de style se trouve dans le répertoire courant -->
+    <link rel="stylesheet" href="Exercise2.css"/>
+</head>
+<body>
+    <p>Veuillez saisir un nombre</p>
+    <label for="number">Nombre :</label>
+    <input type="number" id="numberInput" oninput="calculs()" placeholder="Entrez un nombre">
+
+    <p id="resultatRacine">Racine carrée :</p>
+    <p id="resultatArrondi">Racine Arrondi :</p>
+
+    <button onclick="aleatoire()">Générer un nombre aléatoire (1-100)</button>
+    <p id="nombreAleatoire">Nombre aléatoire :</p>
+
+    <button onclick="aleatoire2(2, 99)">Générer un nombre aléatoire (2-99)</button>
+    <p id="nombreAleatoire2">Autre nombre aléatoire :</p>
+<script>
+function calculs() {
+            let inputNumber = parseFloat(document.getElementById("numberInput").value);
+            if (!isNaN(inputNumber)) {
+                document.getElementById("resultatRacine").innerHTML = "Racine carrée : " + Math.sqrt(inputNumber);
+                document.getElementById("resultatArrondi").textContent = "Arrondi : " + Math.round(Math.sqrt(inputNumber));
+            } else {
+                document.getElementById("resultatRacine").innerHTML = "Veuillez entrer un nombre valide.";
+                document.getElementById("resultatArrondi").innerHTML = "";
+            }
+        }
+
+
+        function aleatoire() {
+            let nbr = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("nombreAleatoire").textContent = "Nombre aléatoire : " + nbr;
+        }
+
+        function aleatoire2(min, max) {
+            let nbr = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("nombreAleatoire2").textContent = "Nombre aléatoire (plage " + min + "-" + max + ") : " + nbr;
+        }
+    </script>
+</body>
+</html>
