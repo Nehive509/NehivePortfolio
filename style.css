@@ -131,7 +131,13 @@ background-color: #f4f4f4;
     padding: 20px;
     border-radius: 5px;
 }
-
+.projet-link {
+    color: inherit; 
+    transition: color 0.3s ease; 
+}
+.projet-link:hover {
+    color: blue; 
+}
 
 #competences {
     background-color: #f7f7f7;
